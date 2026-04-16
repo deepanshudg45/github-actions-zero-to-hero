@@ -1,0 +1,15 @@
+name: Hello
+
+#runs on a trigger
+on: 
+  push:
+      branches: main
+
+jobs:
+  greet:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Say hello to user
+          run: echo "hello dosto"
+        - name: Say hello to username
+          run: echo "hello $USER"
