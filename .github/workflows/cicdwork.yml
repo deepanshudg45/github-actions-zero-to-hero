@@ -19,7 +19,7 @@ jobs:
   test:
     needs:
       - code
-      - deploy
+      - build
     runs-on: ubuntu-latest
     steps:
       - name: Test the container
