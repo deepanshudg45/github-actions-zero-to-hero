@@ -17,12 +17,12 @@ jobs:
                 username: ${{ vars.DOCKERHUB_USER}}
                 password: ${{ secrets.DOCKERHUB_PASS}}
 
-            - name: Docker build
+            - name: Docker build and push
               uses: docker/build-push-action@v5
               with:
                 context: .
                 push: true
                 tags: | 
                     ${{ vars.DOCKERHUB_USER}}/python-todo-app:latest
-                    ${{ vars.DOCKERHUB_USER}}/github-action-app:${{ github.head_ref }}
+                    ${{ vars.DOCKERHUB_USER}}/github-action-app:${{ github.ref }}
                     ${{ vars.DOCKERHUB_USER}}/${{ github.event.repository.name }}:${{ github.sha }}
