@@ -1,0 +1,6 @@
+services:
+
+  web:
+    image: ${DOCKERHUB_USER}/python-todo-app:latest
+    ports:
+      - "80:80"
